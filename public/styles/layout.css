@@ -24,3 +24,21 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+ /* Style the <main> element to be:
+
+90% of the width of its parent element
+center aligned to the body
+the same background colour as the <body> element */
+
+main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f1ec;
+  margin-left: 2em;
+  margin-right: 2em;
+}
