@@ -11,6 +11,7 @@
 .siteLogo{
   font-family: 'Bungee', cursive;
   font-weight: bold;
+  padding-top: 1.5em;
 }
 
 .writeTweet {
@@ -22,4 +23,9 @@
   font-style: normal !important;
   margin-top: 1.5em;
   margin-right: 1.5em;
+}
+
+.angleDown{
+  color: red;
+  text-align: center;
 }
