@@ -8,6 +8,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 3;
 }
 
 nav > span {
@@ -24,4 +25,3 @@ nav > span {
 .fa-angles-down{
   color: red;
 }
-
