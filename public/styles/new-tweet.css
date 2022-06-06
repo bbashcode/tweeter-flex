@@ -1,0 +1,15 @@
+textarea {
+  width: 100%;
+  border-bottom: 2px solid grey;
+  background-color: #f4f1ec;
+}
+
+#tweet-text {
+  border-bottom: 1px solid grey;
+}
+
+.tweetSubmit {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}

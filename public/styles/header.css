@@ -12,6 +12,11 @@ header {
   background: linear-gradient(to top, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
 }
 
-span {
+
+#userName {
+  font-weight: bold;
+}
+
+div > h2{
   color: white;
 }
