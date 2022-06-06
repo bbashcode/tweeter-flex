@@ -1,15 +1,45 @@
 main section.new-tweet {
   width: 100%;
-  border-bottom: 2px solid grey;
-  background-color: #f4f1ec;
 }
 
-#tweet-text {
-  border-bottom: 1px solid grey;
+main section.new-tweet form {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #e4e0d7c9;
+  border-radius: 10px;
 }
 
-.tweetSubmit {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+main section.new-tweet form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5em;
+  font-family: 'Bungee', cursive;
+  margin-bottom: 1em;
 }
+main section.new-tweet form label{
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+main section.new-tweet form textarea {
+  overflow: hidden;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: inherit;
+  border-bottom: 2px solid #58554d;
+  margin: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 30px;
+} 
+
+main section.new-tweet form div button{
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+
