@@ -10,7 +10,7 @@ const morgan = require('morgan')
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use(morgan('combined'))
+app.use(morgan('combined'));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
