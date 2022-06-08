@@ -26,7 +26,6 @@ main section.new-tweet form label{
 }
 
 main section.new-tweet form textarea {
-  overflow: hidden;
   border: none;
   outline: none;
   resize: none;
