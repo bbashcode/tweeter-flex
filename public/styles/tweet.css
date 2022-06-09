@@ -3,12 +3,14 @@ article {
   border: 2px solid black;
   margin: 1em;
   padding: 0.4em;
+  background-color: #f4f1ec;
 }
 
-article header {
+article header.page-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 2rem;
 }
 
 article header div {

@@ -33,7 +33,7 @@ main section.new-tweet form textarea {
   border-bottom: 2px solid #58554d;
   margin: 0.5rem;
   margin-bottom: 0.5rem;
-  height: 30px;
+  height: 5rem;
 } 
 
 main section.new-tweet form div button{
