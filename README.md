@@ -17,7 +17,8 @@ Tweeter Homepage
 !["screenshot of tweeter homepage"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/TweeterHomePage.png)
 Tweet Character Counter
 !["screenshot of the tweet character counter"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/CharacterCounter.png)
-
+Tweeter Container
+!["screenshot of the tweeter container"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/TweeterContainer.png)
 
 ## Dependencies
 * Dependencies: 
