@@ -8,8 +8,6 @@ main section.new-tweet form {
   justify-content: stretch;
   width: 100%;
   margin-bottom: 20px;
-  background-color: #e4e0d7c9;
-  border-radius: 10px;
 }
 
 main section.new-tweet form div {
@@ -41,4 +39,6 @@ main section.new-tweet form div button{
   color: #FFFFFF;
 }
 
-
+.tweet-container{
+  width: 100%;
+}

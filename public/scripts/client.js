@@ -1,16 +1,16 @@
 const createTweetElement = function(tweet) {
   const result = `
   <article class="tweet">
-        <header>
+        <header class="tweet-header">
           <div>
-          <img class="user-avatar" src=${tweet.user.avatars}>
+          <img class="user-avatar" src="${tweet.user.avatars}" />
           <span class="tweet-creator-name">${tweet.user.name}</span>
           </div>
           <span class="tweet-creator-username">${tweet.user.handle}</span>
         </header>
-            <span>
+            <div class="tweet-body">
               ${tweet.content.text}
-            </span>
+            </div>
         <footer>
           <span class="date">${tweet.created_at}</span>
           <div class="footericons">
@@ -21,7 +21,6 @@ const createTweetElement = function(tweet) {
         </footer>
       </article>
 `;
-
   return result;
 };
 
@@ -39,13 +38,13 @@ const tweetData = {
   "created_at": 1461116232227
 }
 
-const $tweet = createTweetElement(tweetData);
+$(() => {
+  const $tweet = createTweetElement(tweetData);
 
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements,
-
-
-const renderTweets = function(tweet) {
+  // Test / driver code (temporary)
+  console.log($tweet); // to see what it looks like
+  $('.tweet-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements,
+});
+// const renderTweets = function(tweet) {
   
-};
+// };

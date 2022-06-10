@@ -1,16 +1,15 @@
 article {
   width: 100%;
   border: 2px solid black;
-  margin: 1em;
+  margin: 1em 0;
   padding: 0.4em;
   background-color: #f4f1ec;
 }
 
-article header.page-header {
+.tweet-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 2rem;
 }
 
 article header div {
@@ -28,8 +27,7 @@ article footer {
   border-top: 2px solid black;
   display: flex;
   justify-content: space-between;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
+  padding: 0.3em 20px;
 }
 
 article footer div {
@@ -38,4 +36,12 @@ article footer div {
 
 article footer span {
   font-size: 0.6em;
+}
+
+.tweet-body {
+  padding: 30px 20px;
+}
+
+.footericons i:hover{
+  color: #0a50ba;
 }
