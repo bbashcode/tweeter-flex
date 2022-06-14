@@ -70,4 +70,15 @@ $(() => {
       data: data
     })
   });
+
+  const loadTweets = () => {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+    }).then((tweets) =>{
+      console.log(tweets);
+      renderTweets(tweets);
+    });
+  };
+  loadTweets();
 });
