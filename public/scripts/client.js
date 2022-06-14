@@ -52,7 +52,7 @@ const createTweetElement = function(tweet) {
 
 
 const renderTweets = function(tweets) {
-  tweets.forEach(tweet => $('.tweet-container').append(createTweetElement(tweet)));
+  tweets.forEach(tweet => $('.tweet-container').prepend(createTweetElement(tweet)));
 };
 
 const isValid = (tweets) => {
@@ -81,7 +81,8 @@ $(() => {
       method: "POST",
       url: "/tweets",
       data: data
-    }).then(loadTweets);
+    }).then(loadTweets)
+      .then($('.new-tweet-from-form').val(''));
   });
 
   renderTweets(data);
