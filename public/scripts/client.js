@@ -1,5 +1,3 @@
-
-
 const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="tweet">
@@ -14,7 +12,7 @@ const createTweetElement = function(tweet) {
               ${tweet.content.text}
             </div>
         <footer>
-          <span class="date">${tweet.created_at}</span>
+          <span class="date">${timeago.format(tweet.created_at)}</span>
           <div class="footericons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
@@ -56,6 +54,6 @@ $(() => {
       renderTweets(tweets);
     });
   };
-  
+
   loadTweets();
 });
