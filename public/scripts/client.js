@@ -24,21 +24,29 @@ const data = [
   }
 ]
 
+//For XSS Attack Prevention Measure
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+
 const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="tweet">
         <header class="tweet-header">
           <div>
           <img class="user-avatar" src="${tweet.user.avatars}" />
-          <span class="tweet-creator-name">${tweet.user.name}</span>
+          <span class="tweet-creator-name">${escape(tweet.user.name)}</span>
           </div>
-          <span class="tweet-creator-username">${tweet.user.handle}</span>
+          <span class="tweet-creator-username">${escape(tweet.user.handle)}</span>
         </header>
             <div class="tweet-body">
-              ${tweet.content.text}
+              ${escape(tweet.content.text)}
             </div>
         <footer>
-          <span class="date">${timeago.format(tweet.created_at)}</span>
+          <span class="date">${escape(timeago.format(tweet.created_at))}</span>
           <div class="footericons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
