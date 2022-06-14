@@ -42,3 +42,10 @@ main section.new-tweet form div button{
 .tweet-container{
   width: 100%;
 }
+
+#error-message {
+  width: 60vw;
+  border: red solid 3px;
+  display: none;
+  padding: 0 2rem;
+}

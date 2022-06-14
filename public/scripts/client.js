@@ -67,6 +67,13 @@ const isValid = (tweets) => {
   return (tweets.length > 0 && tweets !== null && tweets.length <= 140);
 }
 
+//boolean flag to show or hide error slider
+let isFalse = false;
+
+const showSlider = (isFalse) => {
+  return (isFalse? $('.error-message').hide(): $('.error-message').slideDown());
+};
+
 $(() => {
   const loadTweets = () => {
     $.ajax({
@@ -78,12 +85,14 @@ $(() => {
     });
   };
 
+  showSlider(!isFalse);
+
   $('.new-tweet-from-form').on("submit", (event)=>{
     event.preventDefault();
     const data = $('.new-tweet-from-form').serialize();
 
     if(!isValid(data)){
-      alert("Invalid request, please try again and make sure to have a min 1 to max 140 chatacters for your tweet!");
+      showSlider(isFalse);
     }
     $.ajax({
       method: "POST",

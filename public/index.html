@@ -53,6 +53,13 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div id="error-message" >
+          <div>
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Error! Pls respect our arbitrary limit of 1 to 140 chars. #kthxbye</p>
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+        </div>
         <form class="new-tweet-from-form" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
