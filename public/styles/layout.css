@@ -45,6 +45,9 @@ main {
 
 
 @media only screen and (min-width: 1024px) {
+  .page-header {
+    margin: 7%;
+  }
   .responsive-design{
     display: flex;
   }  
