@@ -9,9 +9,14 @@ Tweeter Homepage
 !["screenshot of tweeter homepage"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/TweeterHomePage.png)
 Tweet Character Counter
 !["screenshot of the tweet character counter"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/CharacterCounter.png)
-Tweeter Container
-!["screenshot of the tweeter container"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/TweeterContainer.png)
-
+Desktop View
+!["screenshot of the Desktop View"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/DesktopView.png)
+Mobile View
+!["screenshot of the Mobile View"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/MobileView.png)
+Error Message
+!["screenshot of the Error Message"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/ErrorMessage1.png)
+Error Message
+!["screenshot of the Error Message"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/ErrorMessage2.png)
 ## Dependencies
 * Dependencies: 
   - Express
