@@ -48,4 +48,21 @@ main section.new-tweet form div button{
   border: red solid 3px;
   display: none;
   padding: 0 2rem;
+  margin-top: 4%;;
+}
+
+#show-message{
+  display: flex;
+}
+
+#show-message p{
+  color: red;
+  font-size: large;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.fa-exclamation-triangle{
+  color: red;
+  padding-top: 0.8rem;
 }
