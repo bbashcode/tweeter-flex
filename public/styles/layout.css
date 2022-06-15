@@ -43,12 +43,13 @@ main {
   margin-right: 2em;
 }
 
+
 @media only screen and (min-width: 1024px) {
+  .responsive-design{
+    display: flex;
+  }  
   .container {
     display: flex;
     justify-content: space-between;
-  }
-  main {
-    margin-top: 190.5px;
   }
 }

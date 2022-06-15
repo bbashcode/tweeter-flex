@@ -35,25 +35,25 @@ const escape = function (str) {
 const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="tweet">
-        <header class="tweet-header">
-          <div>
-          <img class="user-avatar" src="${tweet.user.avatars}" />
-          <span class="tweet-creator-name">${escape(tweet.user.name)}</span>
-          </div>
-          <span class="tweet-creator-username">${escape(tweet.user.handle)}</span>
-        </header>
-            <div class="tweet-body">
-              ${escape(tweet.content.text)}
-            </div>
-        <footer>
-          <span class="date">${escape(timeago.format(tweet.created_at))}</span>
-          <div class="footericons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article>
+    <header class="tweet-header">
+      <div>
+        <img class="user-avatar" src="${tweet.user.avatars}" />
+        <span class="tweet-creator-name">${escape(tweet.user.name)}</span>
+      </div>
+      <span class="tweet-creator-username">${escape(tweet.user.handle)}</span>
+    </header>
+    <div class="tweet-body">
+      ${escape(tweet.content.text)}
+    </div>
+    <footer>
+      <span class="date">${escape(timeago.format(tweet.created_at))}</span>
+      <div class="footericons">
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+    </footer>
+  </article>
 `;
   return $tweet;
 };
@@ -68,10 +68,9 @@ const isValid = (tweets) => {
 }
 
 //boolean flag to show or hide error slider
-let isFalse = false;
 
-const showSlider = (isFalse) => {
-  return (isFalse? $('.error-message').hide(): $('.error-message').slideDown());
+const setErrorsHidden = (hide) => {
+  return (hide? $('#error-message').hide(): $('#error-message').slideDown());
 };
 
 $(() => {
@@ -85,21 +84,29 @@ $(() => {
     });
   };
 
-  showSlider(!isFalse);
-
   $('.new-tweet-from-form').on("submit", (event)=>{
     event.preventDefault();
     const data = $('.new-tweet-from-form').serialize();
+    console.log(`data`, data);
 
-    if(!isValid(data)){
-      showSlider(isFalse);
+    if(!($('#tweet-text').val())){
+      $("#error-message p").text("Error! Pls respect our arbitrary limit of characters greater than 0. #kthxbye");
+      setErrorsHidden(false);
+      return;
+    } else if(($('#tweet-text').val().length > 140)){
+      $("#error-message p").text("Error! Pls respect our arbitrary limit of characters less than 140. #kthxbye");
+      setErrorsHidden(false);
+      return
     }
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: data
     }).then(loadTweets)
-      .then($('.new-tweet-from-form').val(''));
+      .then(()=>{
+        $('#tweet-text').val('');
+        setErrorsHidden(true);
+      });
   });
 
   renderTweets(data);

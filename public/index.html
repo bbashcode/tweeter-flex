@@ -42,37 +42,36 @@
       </div>
       
     </nav>
-    <header class="page-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2><span id="userName">Amy</span> Mansell</h2>
-      </div>
-  </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div id="error-message" >
-          <div>
-            <i class="fas fa-exclamation-triangle"></i>
-            <p>Error! Pls respect our arbitrary limit of 1 to 140 chars. #kthxbye</p>
-            <i class="fas fa-exclamation-triangle"></i>
-          </div>
+    <div class="responsive-design">
+      <header class="page-header">
+        <div>
+            <img src="/images/profile-hex.png"> 
         </div>
-        <form class="new-tweet-from-form" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+        <br>
+        <div>
+            <h2><span id="userName">Amy</span> Mansell</h2>
+        </div>
+    </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div id="error-message" >
+              <i class="fas fa-exclamation-triangle"></i>
+              <p></p>
           </div>
-        </form>
-      </section>
-      <div class="tweet-container">
-      </div>
-      
-    </main>
+          <form class="new-tweet-from-form" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <div class="tweet-container">
+        </div>
+        
+      </main>
+    </div>
   </body>
 </html>
