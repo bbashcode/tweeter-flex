@@ -44,11 +44,10 @@ main section.new-tweet form div button{
 }
 
 #error-message {
-  width: 60vw;
   border: red solid 3px;
   display: none;
-  padding: 0 2rem;
-  margin-top: 4%;;
+  padding: 0 10px;
+  margin-top: 4%;
 }
 
 #show-message{
