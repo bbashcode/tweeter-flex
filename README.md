@@ -3,7 +3,12 @@
 Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Getting Started
 
+1. Clone this repository onto your local device using git clone <URL>
+2. Install dependencies using the `npm install` command.
+3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+4. Go to <http://localhost:8080/> in your browser.
 ## Final Product
 Tweeter Homepage
 !["screenshot of tweeter homepage"](https://github.com/bbashcode/tweeter-flex/blob/master/docs/TweeterHomePage.png)
