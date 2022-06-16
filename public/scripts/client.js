@@ -32,6 +32,7 @@ const escape = function (str) {
 };
 
 
+//Function to create a tweet
 const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="tweet">
@@ -59,21 +60,20 @@ const createTweetElement = function(tweet) {
 };
 
 
+//function to render tweets and add it to the dom
 const renderTweets = function(tweets) {
   tweets.forEach(tweet => $('.tweet-container').prepend(createTweetElement(tweet)));
 };
 
-const isValid = (tweets) => {
-  return (tweets.length > 0 && tweets !== null && tweets.length <= 140);
-}
-
-//boolean flag to show or hide error slider
-
+//function to either show or hide error message
 const setErrorsHidden = (hide) => {
   return (hide? $('#error-message').hide(): $('#error-message').slideDown());
 };
 
+//Document ready block, this section will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute
 $(() => {
+
+  //function to fetch tweets and render them
   const loadTweets = () => {
     $.ajax({
       method: "GET",
@@ -84,6 +84,7 @@ $(() => {
     });
   };
 
+  //function to add/submit new tweet using the  tweet form
   $('.new-tweet-from-form').on("submit", (event)=>{
     event.preventDefault();
     const data = $('.new-tweet-from-form').serialize();
@@ -96,7 +97,7 @@ $(() => {
     } else if(($('#tweet-text').val().length > 140)){
       $("#error-message p").text("Error! Pls respect our arbitrary limit of characters less than 140. #kthxbye");
       setErrorsHidden(false);
-      return
+      return;
     }
     $.ajax({
       method: "POST",
@@ -105,6 +106,7 @@ $(() => {
     }).then(loadTweets)
       .then(()=>{
         $('#tweet-text').val('');
+        $('.counter').val(140);
         setErrorsHidden(true);
       });
   });
