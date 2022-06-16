@@ -46,7 +46,7 @@ const setErrorsHidden = (hide) => {
 
 //Document ready block, this section will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute
 $(() => {
-  //function to fetch tweets and render them
+  //function to fetch tweets using a GET call and render them
   const loadTweets = () => {
     $.ajax({
       method: "GET",
@@ -56,16 +56,19 @@ $(() => {
     });
   };
 
-  //function to add/submit new tweet using the  tweet form
+  //function to add/submit new tweet using POST
   $('.new-tweet-from-form').on("submit", (event)=>{
     event.preventDefault();
     const data = $('.new-tweet-from-form').serialize();
 
     //error handling
+
+    //checking if the tweet is null or less than or equal to 0
     if(!($('#tweet-text').val())){
       $("#error-message p").text("Error! Pls respect our arbitrary limit of characters greater than 0. #kthxbye");
       setErrorsHidden(false);
       return;
+    //checking if the tweet is greater than 140 charcters
     } else if(($('#tweet-text').val().length > 140)){
       $("#error-message p").text("Error! Pls respect our arbitrary limit of characters less than 140. #kthxbye");
       setErrorsHidden(false);
@@ -77,11 +80,14 @@ $(() => {
       data
     }).then(loadTweets)
       .then(()=>{
+        //clearing out the tweet box once tweet has been posted
         $('#tweet-text').val('');
+        //resetting character count to 140 once a tweet has been posted
         $('.counter').val(140);
         setErrorsHidden(true);
       });
   });
 
+  //tweets should always be visible as long as the app instance is running
   loadTweets();
 });
